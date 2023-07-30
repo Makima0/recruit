@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef, useEffect, useState,useContext } from 'react'
 
+import Throttle from '../../common/helpers/Throttle'
 import {Loaded} from '../../App'
 import './index.less'
 export default function Bar() {
@@ -26,7 +27,7 @@ export default function Bar() {
   }, []);
   useEffect(()=>{
     setTimeout(() => {
-      setLoadedState(true)
+      setLoadedState(1)
     }, 5000);
   },[])
   return (

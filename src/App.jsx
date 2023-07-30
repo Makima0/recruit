@@ -1,15 +1,15 @@
 import { useState ,useRef,useEffect,useContext,createContext} from 'react'
-import Bar from './pages/Bar'
+import FirstLoading from './pages/FirstLoading'
 
 import MusicPlayer from './pages/Mainpage/MusicPlayer'
 import './App.less'
 export const Loaded =createContext()
 function App() {
-  const [LoadedState, setLoadedState] = useState(false)
+  const [LoadedState, setLoadedState] = useState(0)
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
         <MusicPlayer/>
-        <Bar />
+        {LoadedState<2?<FirstLoading />:<div>主页</div>}
     </Loaded.Provider>
   )
 }

@@ -1,16 +1,16 @@
 import React from "react";
-import { useState, useEffect, useRef ,useContext} from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 
-import {Loaded} from '../../../App'
+import { Loaded } from "../../../App";
 import BGM from "../../../assets/BGM.mp3";
 import Throttle from "../../../common/helpers/Throttle";
 import "./index.less";
 export default function MusicPlayer() {
-  const [play, setPlay] = useState(true);
+  const [play, setPlay] = useState(false);
   const audio = useRef(null);
   const clickRef = useRef(null);
-  const [LoadedState, setLoadedState]=useContext(Loaded)
-  const [isPlay,setIsPlay] =useState(false)
+  const [LoadedState, setLoadedState] = useContext(Loaded);
+  const [isPlay, setIsPlay] = useState(false);
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
     console.log(1);
@@ -22,19 +22,22 @@ export default function MusicPlayer() {
       audio.current.play();
     }
   }, 1000);
-
-  useEffect(()=>{
-    clickRef.current.click();
-  },[LoadedState])
+  const handleStart = Throttle(()=>{
+    setLoadedState(2)
+    setPlay(true);
+    audio.current.play();
+  })
+//   useEffect(() => {
+//     clickRef.current.click();
+//   }, [LoadedState]);
   return (
-    <div className={play ? "play-icon playing" : "play-icon"} onClick={handleMusic} ref={clickRef}>
-      <audio
-        ref={audio}
-        src={BGM}
-        loop ={true}
-        controls={false}
-        autoPlay={play}
-      ></audio>
+    <div
+      className={play ? "play-icon playing" : "play-icon"}
+      onClick={handleMusic}
+      ref={clickRef}
+    >
+      <audio ref={audio} src={BGM} loop={true} controls={false}></audio>
+      {LoadedState==1 && <div onClick={handleStart}>点击继续</div>}
     </div>
   );
 }
