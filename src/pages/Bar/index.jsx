@@ -1,11 +1,14 @@
 import React from 'react'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState,useContext } from 'react'
+
+import {Loaded} from '../../App'
 import './index.less'
 export default function Bar() {
   const elementRef = useRef(null);
   const [count, setcount] = useState(0);
   const loaderRef = useRef(null);
   const [loaderWidth, setLoaderWidth] = useState(0);
+  const [LoadedState, setLoadedState]=useContext(Loaded)
   useEffect(() => {
     if (elementRef.current) {
       const observer = new ResizeObserver(entries => {
@@ -21,8 +24,13 @@ export default function Bar() {
       setLoaderWidth(width);
     }
   }, []);
+  useEffect(()=>{
+    setTimeout(() => {
+      setLoadedState(true)
+    }, 5000);
+  },[])
   return (
-    <div id='firstLoading'>
+    <div id='firstLoading' onLoadedData={()=>{}}>
       <div id='spaceShip'>飞船</div>
       <div className="loader" ref={loaderRef}>
         <div id="bar" ref={elementRef}></div>
