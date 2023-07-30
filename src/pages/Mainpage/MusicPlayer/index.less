@@ -1,0 +1,20 @@
+.play-icon {
+  position: absolute;
+  width: 2.483vh;
+  height: 3.034vh;
+  right: 1.349vh;
+  top: 1.349vh;
+  background: url(/src/assets/play-icon.png) no-repeat;
+  background-size: contain;
+}
+.playing {
+    animation: rotating 2s infinite linear;
+  }
+  @keyframes rotating {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
