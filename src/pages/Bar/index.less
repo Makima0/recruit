@@ -1,20 +1,48 @@
+#firstLoading{
+  height: 100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: flex-start;
+margin-top: 30vh;
+
+}
+#spaceShip{
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  background-color: aliceblue;
+
+}
+
 .loader {
-    width: 12em;
-    height: 1em;
+  margin-top: 2vh;
+    width: 50vw;
+    height: 1.5vh;
     border-radius: 8px;
     background-color: #47a7ff44;
   }
   
   .loader #bar {
     height: 100%;
-    // width: 100%;
     border-radius: 8px;
-    background-color: #47a7ff;
+    background-color: #ffffff;
     animation: width7435 5s cubic-bezier(0.32, 0.17, 0, 1.08) ;
     transition: all;
+
+box-shadow:  0 0 5px #fff,
+0 0 10px #fff,
+0 0 12px #fff,
+
   }
   #num{
+    padding-top: 1vh;
+    color: #fff;
+    font-family: fantasy;
+    font-size: larger;
     text-align: center;
+    text-shadow:  0 0 5px #fff,
+    0 0 10px #fff;
   }
   
   @keyframes width7435 {
@@ -24,6 +52,6 @@
     }
   
     to {
-      width: 192px;
+      width: 50vw;
     }
   }
