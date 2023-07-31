@@ -1,0 +1,46 @@
+@pStyle: {
+  width: max-content;
+  font-size: 4.5vw;
+  text-shadow: 0 0 5px #fff,
+    0 0 20px #fff;
+  letter-spacing: 0.5vw;
+}
+
+#mainpage {
+  color: azure;
+  height: 100VH;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainpage p:nth-child(2n) {
+  @pStyle();
+  padding-bottom: 10vh;
+
+}
+
+#mainpage p:first-child {
+  @pStyle();
+  padding-bottom: 2vh;
+}
+
+#mainpage div {
+  position: absolute;
+  bottom: 15vh;
+  font-size: 2vh;
+  color: rgb(50, 119, 169);
+  animation: appear0 2s 1;
+  letter-spacing: 0.5vw;
+}
+
+@keyframes appear0 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

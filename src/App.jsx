@@ -1,16 +1,19 @@
-import { useState ,useRef,useEffect,useContext,createContext} from 'react'
-import FirstLoading from './pages/Bar'
+import { useState, createContext } from 'react'
+import { useRoutes } from 'react-router-dom'
+import routes from './routes'
+import FirstLoading from './pages/FirstLoading'
 
-import MusicPlayer from './pages/Mainpage/MusicPlayer'
 import './App.less'
-export const Loaded =createContext()
+export const Loaded = createContext()
 function App() {
+  const element = useRoutes(routes)
   const [LoadedState, setLoadedState] = useState(0)
+
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
-        <MusicPlayer/>
-        {LoadedState<2?<FirstLoading />:<div>主页</div>}
+      {LoadedState == 0 ? < FirstLoading /> : <div>{ element }</div>}
     </Loaded.Provider>
   )
 }
 export default App
+// 

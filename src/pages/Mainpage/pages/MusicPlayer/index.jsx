@@ -1,9 +1,10 @@
-import React from "react";
-import { useState, useEffect, useRef, useContext } from "react";
 
-import { Loaded } from "../../../App";
-import BGM from "../../../assets/BGM.mp3";
-import Throttle from "../../../common/helpers/Throttle";
+import { useState,  useRef, useContext } from "react";
+import { useNavigate } from 'react-router-dom'
+
+import { Loaded } from "../../../../App";
+import BGM from "../../../../assets/BGM.mp3";
+import Throttle from "../../../../common/helpers/Throttle";
 import "./index.less";
 export default function MusicPlayer() {
   const [play, setPlay] = useState(false);
@@ -12,7 +13,6 @@ export default function MusicPlayer() {
   const [LoadedState, setLoadedState] = useContext(Loaded);
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
-    console.log(1);
     if (play) {
       setPlay(false);
       audio.current.pause();
@@ -21,10 +21,13 @@ export default function MusicPlayer() {
       audio.current.play();
     }
   }, 1000);
+  const navigate = useNavigate()
+
   const handleStart = Throttle(() => {
-    setLoadedState(2)
+    navigate('/page1')
     setPlay(true);
     audio.current.play();
+    setLoadedState(2)
   })
   
 
@@ -37,7 +40,7 @@ export default function MusicPlayer() {
     >
       <audio ref={audio} src={BGM} loop={true} controls={false}></audio>
     </div>
-    {LoadedState == 1 && <div onClick={handleStart} id="clickStart">点击继续&gt;&gt;</div>}
+    {LoadedState == 1 && <div onClick={handleStart} id="clickStart" to='/main/page1'>点击继续</div>}
     </div>
   );
 }

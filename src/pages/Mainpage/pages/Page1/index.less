@@ -1,0 +1,67 @@
+@text: {
+  color: azure;
+  letter-spacing: 1vw;
+  position: absolute;
+  line-height: 4vh;
+  text-indent: 2em;
+  text-align: justify;
+  padding: 0 2vw;
+  animation: text1Appear 4s;
+  font-size: 2vh;
+}
+
+
+#page1 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+#text1 {
+  @text();
+  top: 40%;
+}
+
+@keyframes text1Appear {
+  from {
+    opacity: 0;
+  }
+
+  yo {
+    opacity: 1;
+  }
+}
+
+
+#next1 {
+  font-size: 3vh;
+  width: 3vh;
+  height: 3vh;
+  color: aliceblue;
+  bottom: 30vh;
+  margin-top: 10em;
+  padding-right: 2vh;
+  animation: button1Appear 4s;
+  float: right;
+}
+
+@keyframes button1Appear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+#text2{
+  @text();
+}
