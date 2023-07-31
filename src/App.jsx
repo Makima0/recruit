@@ -1,5 +1,5 @@
 import { useState ,useRef,useEffect,useContext,createContext} from 'react'
-import FirstLoading from './pages/FirstLoading'
+import FirstLoading from './pages/Bar'
 
 import MusicPlayer from './pages/Mainpage/MusicPlayer'
 import './App.less'

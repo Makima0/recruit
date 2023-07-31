@@ -6,15 +6,42 @@
   top: 1.349vh;
   background: url(/src/assets/play-icon.png) no-repeat;
   background-size: contain;
+
 }
+
 .playing {
-    animation: rotating 2s infinite linear;
+  animation: rotating 2s infinite linear;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
   }
-  @keyframes rotating {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
-    }
+
+  100% {
+    transform: rotate(-360deg);
   }
+}
+
+#clickStart {
+  color: rgb(218, 218, 218);
+  position: absolute;
+  top: 80vh;
+  font-size: 4.5vw;
+  width: 25vw;
+  height: 4vw;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow:  0 0 5px #fff,
+  0 0 20px #fff;
+  animation: appearStart 1.5s   infinite alternate;
+}
+@keyframes appearStart{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
