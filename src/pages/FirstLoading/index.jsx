@@ -1,7 +1,6 @@
-import React from 'react'
+
 import { useRef, useEffect, useState,useContext } from 'react'
 
-import Throttle from '../../common/helpers/Throttle'
 import {Loaded} from '../../App'
 import './index.less'
 export default function Bar() {
@@ -31,7 +30,7 @@ export default function Bar() {
     }, 5000);
   },[])
   return (
-    <div id='firstLoading' onLoadedData={()=>{}}>
+    <div id='firstLoading' >
       <div id='spaceShip'>飞船</div>
       <div className="loader" ref={loaderRef}>
         <div id="bar" ref={elementRef}></div>
