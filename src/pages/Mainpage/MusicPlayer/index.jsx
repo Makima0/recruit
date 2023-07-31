@@ -10,7 +10,6 @@ export default function MusicPlayer() {
   const audio = useRef(null);
   const clickRef = useRef(null);
   const [LoadedState, setLoadedState] = useContext(Loaded);
-  const [isPlay, setIsPlay] = useState(false);
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
     console.log(1);
@@ -22,22 +21,23 @@ export default function MusicPlayer() {
       audio.current.play();
     }
   }, 1000);
-  const handleStart = Throttle(()=>{
+  const handleStart = Throttle(() => {
     setLoadedState(2)
     setPlay(true);
     audio.current.play();
   })
-//   useEffect(() => {
-//     clickRef.current.click();
-//   }, [LoadedState]);
+  
+
   return (
+    <div>
     <div
       className={play ? "play-icon playing" : "play-icon"}
       onClick={handleMusic}
       ref={clickRef}
     >
       <audio ref={audio} src={BGM} loop={true} controls={false}></audio>
-      {LoadedState==1 && <div onClick={handleStart}>点击继续</div>}
+    </div>
+    {LoadedState == 1 && <div onClick={handleStart} id="clickStart">点击继续&gt;&gt;</div>}
     </div>
   );
 }
