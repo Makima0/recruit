@@ -13,7 +13,6 @@ export default function MusicPlayer() {
   const [LoadedState, setLoadedState] = useContext(Loaded);
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
-    console.log(1);
     if (play) {
       setPlay(false);
       audio.current.pause();
@@ -41,7 +40,7 @@ export default function MusicPlayer() {
     >
       <audio ref={audio} src={BGM} loop={true} controls={false}></audio>
     </div>
-    {LoadedState == 1 && <div onClick={handleStart} id="clickStart" to='/main/page1'>点击继续&gt;&gt;</div>}
+    {LoadedState == 1 && <div onClick={handleStart} id="clickStart" to='/main/page1'>点击继续</div>}
     </div>
   );
 }
