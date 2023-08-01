@@ -40,7 +40,7 @@ export default function MusicPlayer() {
     >
       <audio ref={audio} src={BGM} loop={true} controls={false}></audio>
     </div>
-    {LoadedState == 1 && <div onClick={handleStart} id="clickStart" to='/main/page1'>点击继续</div>}
+    {LoadedState == 1 && <div onClick={handleStart} id="clickStart">点击继续</div>}
     </div>
   );
 }
