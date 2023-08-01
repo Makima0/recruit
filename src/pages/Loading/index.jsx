@@ -1,7 +1,9 @@
-
-import './index.less'
+import {useEffect} from 'react'
+import  './index.less'
 
 export default function Loading() {
+  useEffect(() => { console.log(111); },[])
+  
   return (
     <div className="loader0">
       <div className="loader1">
