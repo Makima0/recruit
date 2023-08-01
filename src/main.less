@@ -1,8 +1,9 @@
-body{
+body {
   background-color: black;
   margin: 0;
   height: 100vh;
 }
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -12,12 +13,57 @@ body{
   height: 100%;
   width: 100%;
 }
-#stars{
+
+#stars {
   position: absolute;
-  top:0;
+  top: 0;
   width: 100vw;
   height: 100vh;
   z-index: -50;
-  
 
+}
+
+#alert {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 40vw;
+  right: 40vw;
+  font-size: 3vw;
+  letter-spacing: 1vw;
+  animation: floatAlert 1.5s infinite alternate;
+  display: none;
+}
+ /*判断当前屏幕方向*/
+//  横向
+@media screen and (orientation: landscape) {
+
+ 
+  #root,#stars {
+    display: none;
+  }
+
+  #alert {
+    display: block;
+  }
+}
+// 竖向
+@media screen and (orientation:portrait) {
+
+  #root,#stars {
+    display: block;
+  }
+
+  #alert {
+    display: none;
+   
+  }
+}
+@keyframes floatAlert {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

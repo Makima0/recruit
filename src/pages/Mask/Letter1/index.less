@@ -1,3 +1,15 @@
+#letterMask {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(169, 169, 169, 0.311);
+  opacity: 0.6;
+  background-size: 100vh 100vw;
+}
+
 #Letter {
   position: absolute;
   z-index: 100;
@@ -11,7 +23,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  animation: appearLetter 1s;
+  opacity: 1;
+
 }
+
 
 #Letter p {
   color: aliceblue;
@@ -21,7 +37,113 @@
 
 #letter1 {
   width: 70vw;
-  height:25vh;
-  background-color: aliceblue;
+  height: 25vh;
+  background-color: rgb(255, 255, 255);
   margin-bottom: 25vh;
+  animation: shake 500ms 0.5s;
+}
+
+@keyframes shake {
+  10% {
+    transform: rotate(5deg);
+  }
+
+  20% {
+    transform: rotate(-5deg);
+  }
+
+  30% {
+    transform: rotate(2deg);
+  }
+
+  40% {
+    transform: rotate(-5deg);
+  }
+
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+#Letter2 {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100vh 100vw;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+#letterText {
+  width: 80vw;
+  height: 70vh;
+  background-color: rgb(255, 255, 255);
+  padding: 1.5vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: appearLetter 2s;
+  #letterText1 {
+    color: black;
+    height: 30vh;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    h1 {
+      margin: 0 0;
+      font-size: 4vh;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 2vmax;
+      margin: 0;
+      line-height: 5vh;
+    }
+
+  }
+}
+
+#teamChoose {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 50vh;
+  bottom: 5%;
+
+  div {
+    margin: 3% 0;
+    font-size: 2vmax;
+  }
+}
+
+/***按钮样式*****/
+button {
+  padding: 0 4vw;
+  font-size: 4vw;
+  margin-top: 3vh;
+  height: 3em;
+  border-radius: 2.5vh;
+  animation: appearLetter 2s;
+}
+@keyframes appearLetter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
