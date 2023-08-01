@@ -1,6 +1,5 @@
 import React,{Suspense} from 'react'
 import { Navigate } from 'react-router-dom'
-import MusicPlayer from '../pages/Mainpage/pages/MusicPlayer'
 import Mainpage from '../pages/Mainpage'
 import Loading from '../pages/Loading'
 import Error from '../pages/Error'
@@ -15,11 +14,11 @@ element:<Error/>
   },
   {
     path:'/main',
-    element:<><Mainpage/><MusicPlayer/></> ,
+    element:<><Mainpage/></> ,
   },
       {
         path:'/page1',
-        element:<Suspense fallback={<Loading />}><Page1/><MusicPlayer/></Suspense>
+        element:<Suspense fallback={<Loading />}><Page1/></Suspense>
       }
 ,{
     path:'/',

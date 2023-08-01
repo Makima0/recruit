@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import routes from "./routes";
 import FirstLoading from "./pages/FirstLoading";
 import Error from "./pages/Error";
+import MusicPlayer from "./pages/Mainpage/pages/MusicPlayer";
 import "./App.less";
 //异步加载组件
 // const FirstLoading = React.lazy(() => import('./pages/FirstLoading'));
@@ -33,9 +34,8 @@ function App() {
   }, []);
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
-
+      {LoadedState!=0&&<MusicPlayer/>}
       {LoadedState == 0 ? <FirstLoading /> : <div>{element}</div>}
-      {!onlineStatus && <Error />}
     </Loaded.Provider>
   );
 }
