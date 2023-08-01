@@ -38,7 +38,7 @@ export default function MusicPlayer() {
       onClick={handleMusic}
       ref={clickRef}
     >
-      <audio ref={audio} src={BGM} loop={true} controls={false}></audio>
+      <audio ref={audio} src={BGM} loop={true} controls={false} preload={true}></audio>
     </div>
     {LoadedState == 1 && <div onClick={handleStart} id="clickStart">点击继续</div>}
     </div>
