@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import  './index.less'
 import Offline from 'offline-js'
 
 import  './index.less'
@@ -19,9 +20,12 @@ export default function Error() {
   }, [navigator.onLine]);
 
   return (
-    <div>
-      {/* 渲染你想要的组件内容 */}
+    <div id='errorPage'>
+      <div className="planet">
+        <span>网络异常</span>
+        <div id='ring'></div>
+  </div>
     </div>
   );
-};
+}
 
