@@ -9,6 +9,7 @@ export default function Bar() {
   const loaderRef = useRef(null);
   const [loaderWidth, setLoaderWidth] = useState(0);
   const [LoadedState, setLoadedState]=useContext(Loaded)
+  const loadref=useRef(null)
   useEffect(() => {
     if (elementRef.current) {
       const observer = new ResizeObserver(entries => {
@@ -29,8 +30,15 @@ export default function Bar() {
       setLoadedState(1)
     }, 5000);
   },[])
+  useEffect(() => {
+    if (!loadref.current) {
+      return(<div>
+        loading...
+      </div>)
+    }
+  }, []);
   return (
-    <div id='firstLoading' >
+    <div id='firstLoading'ref={loadref} >
       <div id='spaceShip'>飞船</div>
       <div className="loader" ref={loaderRef}>
         <div id="bar" ref={elementRef}></div>

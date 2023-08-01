@@ -1,7 +1,9 @@
-
+import {useEffect} from 'react'
 import  './index.less'
 
 export default function Loading() {
+  useEffect(() => { console.log(111); },[])
+  
   return (
     <div>
     <div data-js="astro" className="astronaut">
