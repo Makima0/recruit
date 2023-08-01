@@ -1,4 +1,4 @@
-import Mask from '../../../Mask'
+import Letter1 from '../../../Mask/Letter1'
 
 import './index.less'
 import { useState, useContext } from "react";
@@ -24,7 +24,7 @@ export default function Page1() {
           <div id='text2'><p>后来出现了一种神秘物质，拥有无限的能量和潜力，足以改变整个星际格局。各个星系闻讯而动，争相争夺。</p>
             <p>而宇宙中的竞争对手们拥有有强大的舰队和科技实力，通过商议，红岩星系决定与艾克塔尔星系联盟，共同争夺。</p>
           </div>
-          : <Mask />
+          : <Letter1 />
       }   <span id='next1' onClick={handleNext}>▽</span></div>
   )
 }

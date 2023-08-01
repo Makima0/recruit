@@ -8,6 +8,8 @@ import "./App.less";
 // const FirstLoading = React.lazy(() => import('./pages/FirstLoading'));
 export const Loaded = createContext();
 function App() {
+
+
   const element = useRoutes(routes);
   const [LoadedState, setLoadedState] = useState(0);
 
@@ -40,4 +42,3 @@ function App() {
   );
 }
 export default App;
-//
