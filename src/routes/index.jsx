@@ -7,6 +7,7 @@ import Error from '../pages/Error'
 // 异步加载
 const Page1 = React.lazy(() => import('../pages/Mainpage/pages/Page1/index'));
 const Page2 = React.lazy(() => import('../pages/Mainpage/pages/Page2/index'));
+const Ending = React.lazy(() => import('../pages/Ending'));
 
 export default [
 
@@ -26,6 +27,10 @@ export default [
   {
     path: '/page2',
     element: <Suspense fallback={<Loading />}><Page2 /></Suspense>,
+  },
+  {
+    path: '/end',
+    element: <Suspense fallback={<Loading />}><Ending /></Suspense>,
   },
   {
     path: '/',

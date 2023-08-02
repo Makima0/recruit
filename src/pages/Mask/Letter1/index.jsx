@@ -35,7 +35,7 @@ export default function Letter1() {
           <div id='letterText'>
             <div id='letterText1'>
               <h1>紧急来信</h1>
-              <p>尊敬的艾克塔尔星系战队总指挥官，</p>
+              <h4>尊敬的艾克塔尔星系战队总指挥官,</h4>
               <p>请您立即赴约，选择一支战队加入到红岩星系中与之匹配度最高的战队，以便减少磨合期，发挥本星系战队的最大作用，完成联盟。</p>
             </div>
             <div id='teamChoose'>

@@ -8,6 +8,7 @@
   background-color: rgba(169, 169, 169, 0.311);
   opacity: 0.6;
   background-size: 100vh 100vw;
+  min-width: 350px;
 }
 
 #Letter {
@@ -25,7 +26,7 @@
   flex-direction: column;
   animation: appearLetter 1s;
   opacity: 1;
-
+  min-width: 350px;
 }
 
 
@@ -80,7 +81,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  min-width: 350px;
 }
 
 #letterText {
@@ -92,17 +93,25 @@
   flex-direction: column;
   justify-content: space-between;
   animation: appearLetter 2s;
+  min-width: 320px;
   #letterText1 {
     color: black;
     height: 30vh;
     margin: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;;
     flex-direction: column;
 
     h1 {
-      margin: 0 0;
+      margin: 0 0 0.5em 0;
       font-size: 4vh;
+    }
+    h4{
+      margin: 0;
+      text-align: left;
+      font-size: 2.4vmax;
+      font-weight: 600;
+
     }
 
     p {
@@ -124,7 +133,7 @@
   bottom: 5%;
 
   div {
-    margin: 3% 0;
+    margin: auto 0;
     font-size: 2vmax;
   }
 }
