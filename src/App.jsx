@@ -4,6 +4,7 @@ import routes from "./routes";
 import FirstLoading from "./pages/FirstLoading";
 import Error from "./pages/Error";
 import MusicPlayer from "./pages/Mainpage/pages/MusicPlayer";
+import Background from './common/Background/index'
 import "./App.less";
 //异步加载组件
 // const FirstLoading = React.lazy(() => import('./pages/FirstLoading'));
@@ -36,6 +37,7 @@ function App() {
   }, []);
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
+      <Background/>
       {LoadedState!=0&&<MusicPlayer/>}
       {LoadedState == 0 ? <FirstLoading /> : <div>{element}</div>}
     </Loaded.Provider>
