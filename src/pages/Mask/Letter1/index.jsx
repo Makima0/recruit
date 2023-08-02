@@ -15,7 +15,7 @@ export default function Letter1() {
   }
   function handleChoose1(team){
     if (teamStatus) {
-      navigate(`/page2?team=${team}`)
+      navigate('/end')
     } else {
       alert('请选择你的战队')
     }
@@ -55,3 +55,4 @@ export default function Letter1() {
     </>
   )
 }
+// `/page2?team=${team}`
