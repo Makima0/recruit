@@ -2,11 +2,11 @@
 export function startAnimation() {
   let context;
   let arr = new Array();
-  let starCount = 800;
+  let starCount = 100;
   let rains = new Array();
-  let rainCount = 20;
+  let rainCount = 3;
   let windowWidth;
-
+  alert("动画渲染")
   function init() {
     let stars = document.getElementById("stars");
     windowWidth = window.innerWidth; //当前的窗口的高度
@@ -166,7 +166,7 @@ export function startAnimation() {
             rains[n].init();
         }
     }
-    setTimeout(playRains, 10);
+    setTimeout(playRains, 30);
 }
   //页面加载的时候
   function onLoad() {

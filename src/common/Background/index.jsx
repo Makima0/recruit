@@ -12,6 +12,7 @@ function Background() {
 
     // loadScript();
     startAnimation()
+    
   }, []);
 
   return <canvas id="stars"></canvas>;
