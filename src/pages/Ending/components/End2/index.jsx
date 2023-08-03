@@ -1,5 +1,4 @@
 import  './index.less'
-
 export default function End2() {
   return (
     <div>  <div id='end1'>

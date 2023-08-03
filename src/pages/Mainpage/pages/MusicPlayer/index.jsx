@@ -33,8 +33,8 @@ export default function MusicPlayer() {
   })
   useEffect(() => {
     setmusicLoaded(audio.current.readyState)
-   console.log({musicLoaded});
-  }, [musicLoaded])
+   alert(`${musicLoaded}`);
+  }, [audio.current])
   
 
 
