@@ -9,11 +9,13 @@ import "./App.less";
 //异步加载组件
 // const FirstLoading = React.lazy(() => import('./pages/FirstLoading'));
 export const Loaded = createContext();
+export const MusicLoad = createContext();
 function App() {
 
 
   const element = useRoutes(routes);
   const [LoadedState, setLoadedState] = useState(0);
+  const [musicLoaded, setmusicLoaded] = useState(0);
 
   //网络监测
   const [onlineStatus, setOnlinStatus] = useState(true);
@@ -52,8 +54,10 @@ function App() {
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
       <Background />
+      <MusicLoad.Provider value={[musicLoaded, setmusicLoaded]}>
       {currentPath!='/firstload' && <MusicPlayer />}
       {element}
+      </MusicLoad.Provider >
     </Loaded.Provider>
   );
 }

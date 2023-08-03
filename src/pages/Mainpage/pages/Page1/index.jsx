@@ -4,10 +4,13 @@ import './index.less'
 import { useState, useContext } from "react";
 
 import { useEffect } from 'react'
-import { Loaded } from "../../../../App";
+import { Loaded,MusicLoad } from "../../../../App";
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../../Loading'
 export default function Page1() {
   const [LoadedState, setLoadedState] = useContext(Loaded);
+  const [musicLoaded, setmusicLoaded] = useContext(MusicLoad);
+
   const navigate = useNavigate()
   const [textCount, settextCount] = useState(1)
   function handleNext() {
@@ -22,10 +25,10 @@ export default function Page1() {
     if (textCount > 2) {
       navigate('/letter1')
     }
-
   }, [textCount])
 
-  return (
+  return (<>
+  {musicLoaded!=4?<Loading/>:
     <div id='page1'>
 
       {textCount == 1 &&
@@ -41,6 +44,7 @@ export default function Page1() {
           <span id='next1' onClick={handleNext}>▽</span>
         </>
 
-      }   </div>
+      }   </div>}
+      </>
   )
 }
