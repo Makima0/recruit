@@ -24,13 +24,12 @@ export default function MusicPlayer() {
   const navigate = useNavigate()
 
   const handleStart = Throttle(() => {
-    audio.current.load();
     navigate('/page1')
     setPlay(true);
     audio.current.play();
     setLoadedState(2)
   })
-  
+  const currentPath= window.location.pathname;
 
   return (
     <div>
@@ -41,7 +40,7 @@ export default function MusicPlayer() {
     >
       <audio ref={audio} src={BGM} loop={true} controls={false} preload="auto"></audio>
     </div>
-    {LoadedState == 1 && <div onClick={handleStart} id="clickStart">点击继续</div>}
+    {LoadedState == 1 &currentPath=='/main'&& <div onClick={handleStart} id="clickStart">点击继续</div>}
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function End2() {
     <p>相信在你们的联盟下</p>
     <p>很快就可以获得宝贵资源</p>
     </div>
-    <div id='qrCode'><div>1</div><div>2</div></div>
+    <div id='qrCode'><div>1</div><img src='../../../../../src/common/group-lower.png'></img><div>2</div></div>
   </div></div>
   )
 }

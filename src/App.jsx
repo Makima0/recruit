@@ -1,5 +1,5 @@
-import React,{ useState, createContext, useEffect,useRef} from "react";
-import { useRoutes } from "react-router-dom";
+import React, { useState, createContext, useEffect, useRef } from "react";
+import { useRoutes, useNavigate } from "react-router-dom";
 import routes from "./routes";
 import FirstLoading from "./pages/FirstLoading";
 import Error from "./pages/Error";
@@ -35,11 +35,25 @@ function App() {
       window.removeEventListener("online", handleOnlineStatus);
     };
   }, []);
+  //获取当前地址进行判断
+  const currentPath = window.location.pathname;
+
+  console.log(currentPath);
+  const navigate = useNavigate()
+  useEffect(() => {
+
+    if (currentPath == '/main') {
+      setLoadedState(0)
+      navigate('/firstload')
+    } else if (LoadedState == 1 && currentPath == '/firstload') {
+      navigate('/main')
+    }
+  }, [LoadedState])
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
-      <Background/>
-      {LoadedState!=0&&<MusicPlayer/>}
-      {LoadedState == 0 ? <FirstLoading /> : <div>{element}</div>}
+      <Background />
+      {currentPath!='/firstload' && <MusicPlayer />}
+      {element}
     </Loaded.Provider>
   );
 }

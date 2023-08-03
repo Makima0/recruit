@@ -6,16 +6,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  animation: appearEnd 2s ;
+}
+@keyframes appearEnd {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 
 
-
-#savebutton {
+.savebutton {
   position: absolute;
   bottom: 8vh;
   font-size: 2vh;
   color: rgb(50, 119, 169);
   animation: appear0 2s 1;
   letter-spacing: 0.5vw;
+}
+.appearE{
+  display: none;
 }

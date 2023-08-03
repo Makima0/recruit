@@ -6,7 +6,6 @@ export function startAnimation() {
   let rains = new Array();
   let rainCount = 3;
   let windowWidth;
-  alert("动画渲染")
   function init() {
     let stars = document.getElementById("stars");
     windowWidth = window.innerWidth; //当前的窗口的高度

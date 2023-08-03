@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { Navigate } from 'react-router-dom'
+import FirstLoading from '../pages/FirstLoading'
 import Mainpage from '../pages/Mainpage'
 import Loading from '../pages/Loading'
 import Error from '../pages/Error'
@@ -12,14 +13,17 @@ const Page2 = React.lazy(() => import('../pages/Mainpage/pages/Page2/index'));
 const Ending = React.lazy(() => import('../pages/Ending'));
 
 export default [
-
+  {
+    path:'/firstload',
+    element:<FirstLoading/>
+  },
   {
     path: '/error',
     element: <Error />
   },
   {
     path: '/main',
-    element: <><Mainpage /></>,
+    element: <Mainpage />,
   },
   {
     path: '/page1',
