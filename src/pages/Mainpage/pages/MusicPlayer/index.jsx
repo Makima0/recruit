@@ -12,7 +12,9 @@ export default function MusicPlayer() {
   const clickRef = useRef(null);
   const [LoadedState, setLoadedState] = useContext(Loaded);
   const [musicLoaded, setmusicLoaded] = useContext(MusicLoad);
-
+  const [ReadyState, setReadyState] = useState(0)
+  const navigate = useNavigate()
+  const currentPath = window.location.pathname;
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
     if (play) {
@@ -23,14 +25,18 @@ export default function MusicPlayer() {
       audio.current.play();
     }
   }, 1000);
-  const navigate = useNavigate()
-  const currentPath = window.location.pathname;
-  const handleStart = Throttle(() => {
-    navigate('/page1')
-   alert(audio.current.readyState);
-    if (audio.current.readyState != 4) {
+
+
+
+ const handleStart =()=> {
+    // console.log(ReadyState);
+    if (audio.current.readyState!= 4) {
+      alert(audio.current.readyState)
+      // console.log(ReadyState);
       setmusicLoaded(0)
-      handleStart()
+      setTimeout(() => {
+        handleStart()
+      },2500)
     } else {
       setmusicLoaded(1)
       setPlay(true);
@@ -38,8 +44,21 @@ export default function MusicPlayer() {
     }
 
   }
-  )
 
+  // useEffect(() => {
+  //   const audioElement = audio.current;
+  // setReadyState(audio.current.readyState);
+  // console.log(audio.current.readyState);
+  //   const handleReadyStateChange = () => {
+  //     setReadyState(audioElement.readyState);
+  //   };
+
+  //   audioElement.addEventListener('readystatechange', handleReadyStateChange);
+
+  //   return () => {
+  //     audioElement.removeEventListener('readystatechange', handleReadyStateChange);
+  //   };
+  // }, []);
 
   return (
     <div>
@@ -50,7 +69,10 @@ export default function MusicPlayer() {
       >
         <audio ref={audio} src={BGM} loop={true} controls={false} preload="auto"></audio>
       </div>
-      {LoadedState == 1 & currentPath == '/main' && <div onClick={handleStart} id="clickStart">点击继续</div>}
+      {LoadedState == 1 & currentPath == '/main' && <div onClick={() => {
+        navigate('/page1')
+        handleStart()
+      }} id="clickStart">点击继续</div>}
     </div>
   );
 }
