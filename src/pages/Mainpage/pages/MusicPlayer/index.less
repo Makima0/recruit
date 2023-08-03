@@ -6,6 +6,7 @@
   top: 1.349vh;
   background: url(/src/assets/play-icon.png) no-repeat;
   background-size: contain;
+  z-index: 100;
 }
 
 .playing {
@@ -32,22 +33,26 @@
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
-  text-shadow:  0 0 5px #fff,
-  0 0 20px #fff;
-  animation: appearStart 1.5s   infinite alternate;
- letter-spacing: 0.5vw;
+  text-shadow: 0 0 5px #fff,
+    0 0 20px #fff;
+  animation: appearStart 1.5s infinite alternate;
+  letter-spacing: 0.5vw;
 }
-@keyframes appearStart{
-  from{
+
+@keyframes appearStart {
+  from {
     opacity: 0;
   }
-  to{
+
+  to {
     opacity: 1;
   }
 }
-.hide{
+
+.hide {
   display: none;
 }
-.show{
+
+.show {
   display: block;
 }

@@ -27,8 +27,8 @@ export default function MusicPlayer() {
 
 
 
- const handleStart =()=> {
-  //8月3日bug修改，未完善
+  const handleStart = () => {
+    //8月3日bug修改，未完善
     // console.log(ReadyState);
     // if (audio.current.readyState== 0) {
     //   alert(audio.current.readyState)
@@ -38,16 +38,15 @@ export default function MusicPlayer() {
     //     handleStart()
     //   },5500)
     // } else {
-      setmusicLoaded(1);
-      setPlay(true);
-      audio.current.play();
+    setmusicLoaded(1);
+    setPlay(true);
+    audio.current.play();
     // }
   };
   return (
-    <div>
-      <div className={(currentPath=='/firstload'||currentPath=='/main')?'hide':'show'}>
+    <>
       <div
-        className={(play ? "play-icon playing" : "play-icon")}
+        className={(play ? `play-icon playing ${(currentPath == '/firstload' || currentPath == '/main') ? 'hide' : 'show'}` : `play-icon ${(currentPath == '/firstload' || currentPath == '/main') ? 'hide' : 'show'}`)}
         onClick={handleMusic}
         ref={clickRef}
       >
@@ -59,12 +58,11 @@ export default function MusicPlayer() {
           preload="auto"
 
         ></audio>
-        </div>
-        </div>
+      </div>
       {LoadedState == 1 & currentPath == '/main' && <div onClick={() => {
         navigate('/page1')
         handleStart()
       }} id="clickStart">点击继续</div>}
-    </div>
+    </>
   );
-  }
+}
