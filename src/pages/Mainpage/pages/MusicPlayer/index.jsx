@@ -11,7 +11,9 @@ export default function MusicPlayer() {
   const clickRef = useRef(null);
   const [LoadedState, setLoadedState] = useContext(Loaded);
   const [musicLoaded, setmusicLoaded] = useContext(MusicLoad);
-  // const [ReadyState, setReadyState] = useState(0)
+  const [ReadyState, setReadyState] = useState(0)
+  const navigate = useNavigate()
+  const currentPath = window.location.pathname;
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
     if (play) {
@@ -22,23 +24,24 @@ export default function MusicPlayer() {
       audio.current.play();
     }
   }, 1000);
-  const navigate = useNavigate();
-  const currentPath = window.location.pathname;
-  const handleStart = Throttle(() => {
-    setReadyState(audio.current.readyState)
-    console.log(66);
-    console.log(audio.current.readyState);
+
+
+
+ const handleStart =()=> {
     // console.log(ReadyState);
-    if (ReadyState != 3) {
-      // alert(audio.current.readyState);
-      setmusicLoaded(0);
-      handleStart();
+    if (audio.current.readyState!= 4) {
+      alert(audio.current.readyState)
+      // console.log(ReadyState);
+      setmusicLoaded(0)
+      setTimeout(() => {
+        handleStart()
+      },2500)
     } else {
       setmusicLoaded(1);
       setPlay(true);
       audio.current.play();
     }
-  },500);
+  };
   // useEffect(() => {
   //   const audioElement = audio.current;
     
@@ -47,7 +50,22 @@ export default function MusicPlayer() {
   //     console.log(ReadyState);
   //   };
 
+  }
+
+  // useEffect(() => {
+  //   const audioElement = audio.current;
+  // setReadyState(audio.current.readyState);
+  // console.log(audio.current.readyState);
+  //   const handleReadyStateChange = () => {
+  //     setReadyState(audioElement.readyState);
+  //   };
+
   //   audioElement.addEventListener('readystatechange', handleReadyStateChange);
+
+  //   return () => {
+  //     audioElement.removeEventListener('readystatechange', handleReadyStateChange);
+  //   };
+  // }, []);
 
   // }, []);
   return (
@@ -66,17 +84,10 @@ export default function MusicPlayer() {
 
         ></audio>
       </div>
-      {(LoadedState == 1) & (currentPath == "/main") && (
-        <div
-          onClick={() => {
-            navigate("/page1");
-            handleStart();
-          }}
-          id="clickStart"
-        >
-          点击继续
-        </div>
-      )}
+      {LoadedState == 1 & currentPath == '/main' && <div onClick={() => {
+        navigate('/page1')
+        handleStart()
+      }} id="clickStart">点击继续</div>}
     </div>
   );
 }
