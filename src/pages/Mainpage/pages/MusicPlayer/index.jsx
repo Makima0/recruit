@@ -2,7 +2,7 @@
 import { useState, useRef, useContext, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 
-import { Loaded,MusicLoad } from "../../../../App";
+import { Loaded, MusicLoad } from "../../../../App";
 import BGM from "../../../../assets/BGM.mp3";
 import Throttle from "../../../../common/helpers/Throttle";
 import "./index.less";
@@ -25,17 +25,20 @@ export default function MusicPlayer() {
   }, 1000);
   const navigate = useNavigate()
   const currentPath = window.location.pathname;
-  const handleStart = Throttle( ()=> {
+  const handleStart = Throttle(() => {
     navigate('/page1')
-    setPlay(true);
-    audio.current.play();
-    setmusicLoaded(audio.current.readyState)
-  })
-  useEffect(() => {
-    setmusicLoaded(audio.current.readyState)
-   alert(`${musicLoaded}`);
-  }, [audio.current])
-  
+   alert(audio.current.readyState);
+    if (audio.current.readyState != 4) {
+      setmusicLoaded(0)
+      handleStart()
+    } else {
+      setmusicLoaded(1)
+      setPlay(true);
+      audio.current.play()
+    }
+
+  }
+  )
 
 
   return (
