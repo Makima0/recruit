@@ -15,7 +15,6 @@ export default function Letter2() {
     } else {
       alert('请选择你的战队')
     }
-    console.log(22);
   }
   return (
     <>

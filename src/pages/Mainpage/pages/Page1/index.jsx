@@ -15,7 +15,6 @@ export default function Page1() {
   const [textCount, settextCount] = useState(1)
   function handleNext() {
     settextCount(textCount + 1)
-    console.log(1);
   }
   useEffect(() => {
     setLoadedState(2)
@@ -28,7 +27,7 @@ export default function Page1() {
   }, [textCount])
 
   return (<>
-  {musicLoaded!=4?<Loading/>:
+  {musicLoaded==0?<Loading/>:
     <div id='page1'>
 
       {textCount == 1 &&

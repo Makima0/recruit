@@ -40,7 +40,6 @@ function App() {
   //获取当前地址进行判断
   const currentPath = window.location.pathname;
 
-  console.log(currentPath);
   const navigate = useNavigate()
   useEffect(() => {
 
