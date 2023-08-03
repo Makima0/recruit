@@ -24,6 +24,7 @@ export default function MusicPlayer() {
   const navigate = useNavigate()
 
   const handleStart = Throttle(() => {
+    audio.current.load();
     navigate('/page1')
     setPlay(true);
     audio.current.play();

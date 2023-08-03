@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import  './index.less'
 
 export default function End3() {
+const navigate=useNavigate()
+
+function handleRechoose() {
+  navigate('/letter2')
+}
+
   return (
     <div>    <div id='end1'>
     <div id='endText1'>
@@ -11,7 +18,7 @@ export default function End3() {
     <p>相信在你们的联盟下</p>
     <p>很快就可以获得宝贵资源</p>
     </div>
-    <div id='qrCode'><div>1</div><div>2</div></div>
+    <div id='rechoose'><div onClick={handleRechoose}>重新选择联盟</div></div>
   </div></div>
   )
 }

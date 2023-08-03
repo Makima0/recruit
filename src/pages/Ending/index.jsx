@@ -9,7 +9,7 @@ import  './index.less'
 export default function Ending() {
   return (
     <div id='ending'>
-<End2/>
+<End3/>
 <div id='savebutton'>长按保存到相册</div>
     </div>
   )

@@ -3,6 +3,8 @@ import { Navigate } from 'react-router-dom'
 import Mainpage from '../pages/Mainpage'
 import Loading from '../pages/Loading'
 import Error from '../pages/Error'
+import Letter1 from '../pages/Mask/Letter1'
+import Letter2 from '../pages/Mask/Letter2'
 
 // 异步加载
 const Page1 = React.lazy(() => import('../pages/Mainpage/pages/Page1/index'));
@@ -22,6 +24,12 @@ export default [
   {
     path: '/page1',
     element: <Suspense fallback={<Loading />}><Page1 /></Suspense>
+  },
+  {path:'/letter1',
+  element:<Letter1/>
+  },
+  {path:'/letter2',
+  element:<Letter2/>
   }
   ,
   {
