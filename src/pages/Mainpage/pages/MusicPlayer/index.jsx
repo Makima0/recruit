@@ -1,6 +1,5 @@
-
 import { useState, useRef, useContext, useEffect } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 import { Loaded, MusicLoad } from "../../../../App";
 import BGM from "../../../../assets/BGM.mp3";
@@ -12,7 +11,7 @@ export default function MusicPlayer() {
   const clickRef = useRef(null);
   const [LoadedState, setLoadedState] = useContext(Loaded);
   const [musicLoaded, setmusicLoaded] = useContext(MusicLoad);
-
+  // const [ReadyState, setReadyState] = useState(0)
   const handleMusic = Throttle(() => {
     //处理音乐图标点击事件
     if (play) {
@@ -23,24 +22,34 @@ export default function MusicPlayer() {
       audio.current.play();
     }
   }, 1000);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const currentPath = window.location.pathname;
   const handleStart = Throttle(() => {
-    navigate('/page1')
-   alert(audio.current.readyState);
-    if (audio.current.readyState != 4) {
-      setmusicLoaded(0)
-      handleStart()
+    setReadyState(audio.current.readyState)
+    console.log(66);
+    console.log(audio.current.readyState);
+    // console.log(ReadyState);
+    if (ReadyState != 3) {
+      // alert(audio.current.readyState);
+      setmusicLoaded(0);
+      handleStart();
     } else {
-      setmusicLoaded(1)
+      setmusicLoaded(1);
       setPlay(true);
-      audio.current.play()
+      audio.current.play();
     }
+  },500);
+  // useEffect(() => {
+  //   const audioElement = audio.current;
+    
+  //   const handleReadyStateChange = () => {
+  //     setReadyState(audioElement.readyState);
+  //     console.log(ReadyState);
+  //   };
 
-  }
-  )
+  //   audioElement.addEventListener('readystatechange', handleReadyStateChange);
 
-
+  // }, []);
   return (
     <div>
       <div
@@ -48,9 +57,26 @@ export default function MusicPlayer() {
         onClick={handleMusic}
         ref={clickRef}
       >
-        <audio ref={audio} src={BGM} loop={true} controls={false} preload="auto"></audio>
+        <audio
+          ref={audio}
+          src={BGM}
+          loop={true}
+          controls={false}
+          preload="auto"
+
+        ></audio>
       </div>
-      {LoadedState == 1 & currentPath == '/main' && <div onClick={handleStart} id="clickStart">点击继续</div>}
+      {(LoadedState == 1) & (currentPath == "/main") && (
+        <div
+          onClick={() => {
+            navigate("/page1");
+            handleStart();
+          }}
+          id="clickStart"
+        >
+          点击继续
+        </div>
+      )}
     </div>
   );
 }
