@@ -62,7 +62,7 @@ export default function MusicPlayer() {
       {LoadedState == 1 & currentPath == '/main' && <div onClick={() => {
         navigate('/page1')
         handleStart()
-      }} id="clickStart">点击继续</div>}
+      }} id="clickStart" className="startClickBox"><div id="startClickText"></div></div>}
     </>
   );
 }
