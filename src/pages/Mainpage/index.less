@@ -13,9 +13,54 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  animation: appear0 2s;
 }
 
 
+#MaintitleBox {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Maintitle1 {
+  background-image: url('../../assets/星河守护.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 8vh;
+  width: 29.181vh;
+}
+
+#Maintitle2 {
+  background-image: url('../../assets/永无止境的挑战.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 2vh;
+  width: 27.45vh;
+  margin-top: 1.5vh;
+}
+
+#Maintitle3 {
+  background-image: url('../../assets/欢迎来到星际帝国.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 2vh;
+  width: 23.07vh;
+  padding-top: 5vh;
+  animation: appear0 6s ;
+}
+
+.Centralstar {
+  background-image: url("../../assets/中心星体.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 24vh;
+  width: 41.311vh;
+  z-index: 102;
+  animation: CentralstarFloat 3s infinite alternate;
+  padding-bottom: 20vh;
+}
 
 @keyframes appear0 {
   from {
@@ -25,46 +70,4 @@
   to {
     opacity: 1;
   }
-}
-#MaintitleBox{
-  padding-top: 10vh;
-}
-
-#Maintitle1 {
-  background-image: url('../../assets/星河守护.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 70vw;
-  height: 19.19vw;
-
-
-}
-
-#Maintitle2 {
-  background-image: url('../../assets/永无止境的挑战.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 70vw;
-  height: 5.10vw;  
-  margin-top: 1.5vh;
-}
-
-#Maintitle3 {
-  background-image: url('../../assets/欢迎来到星际帝国.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 40vw;
-  height: 3.9vw;
-  padding-top:5vh;
-}
-
-.Centralstar {
-  background-image: url("../../assets/中心星体.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 84vw;
-  height: 48.8vw;
-  z-index: 102;
-  animation: CentralstarFloat 3s infinite alternate;
-  padding-bottom: 20vh;
 }

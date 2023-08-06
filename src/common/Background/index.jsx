@@ -30,4 +30,3 @@ function Background() {
 }
 
 export default Background;
-{/* <canvas id="stars"></canvas>; */}
