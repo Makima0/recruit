@@ -54,7 +54,7 @@ function App() {
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
       <Background />
       <MusicLoad.Provider value={[musicLoaded, setmusicLoaded]}>
-      {currentPath!='/firstload' && <MusicPlayer />}
+      <MusicPlayer />
       {element}
       </MusicLoad.Provider >
     </Loaded.Provider>

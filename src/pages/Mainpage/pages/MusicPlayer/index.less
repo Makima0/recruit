@@ -1,11 +1,12 @@
 .play-icon {
   position: absolute;
-  width: 2.483vh;
-  height: 3.034vh;
+  width: 4.5vh;
+  height: 4.5vh;
   right: 1.349vh;
   top: 1.349vh;
   background: url(/src/assets/play-icon.png) no-repeat;
   background-size: contain;
+  z-index: 100;
 }
 
 .playing {
@@ -26,22 +27,60 @@
 #clickStart {
   color: rgb(218, 218, 218);
   position: absolute;
-  top: 60vh;
+  bottom: 10vh;
   font-size: 4vw;
-  width: 25vw;
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
-  text-shadow:  0 0 5px #fff,
-  0 0 20px #fff;
-  animation: appearStart 1.5s   infinite alternate;
- letter-spacing: 0.5vw;
+  text-shadow: 0 0 5px #fff,
+    0 0 20px #fff;
+  letter-spacing: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: appearStart 2s ;
+
 }
-@keyframes appearStart{
-  from{
+
+@keyframes appearStart {
+  from {
     opacity: 0;
   }
-  to{
+
+  to {
     opacity: 1;
   }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.startClickBox {
+  background-image: url('../../../../assets/点击进入BOX.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  // width: 45vw;
+  // height: 19.33vw;
+  height: 7vh;
+  width: 16.295vh;
+
+}
+
+#startClickText {
+  background-image: url('../../../../assets/点击进入TEXT.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  // width: 35vw;
+  // height: 11.52vw;
+  height: 4vh;
+  width: 12.152vh;
+  animation: appearStart 2s infinite alternate;
+  margin-top: 0.5vh;
+  margin-left: 0.5vh;
+
 }
