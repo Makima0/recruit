@@ -30,18 +30,18 @@ export default function MusicPlayer() {
   const handleStart = () => {
     //8月3日bug修改，未完善
     // console.log(ReadyState);
-    // if (audio.current.readyState== 0) {
-    //   alert(audio.current.readyState)
-    //   // console.log(ReadyState);
-    //   setmusicLoaded(0)
-    //   setTimeout(() => {
-    //     handleStart()
-    //   },5500)
-    // } else {
+    if (audio.current.readyState== 0) {
+      // alert(audio.current.readyState)
+      //  console.log(ReadyState);
+      setmusicLoaded(0)
+      setTimeout(() => {
+        handleStart()
+      },5500)
+    } else {
     setmusicLoaded(1);
     setPlay(true);
     audio.current.play();
-    // }
+    }
   };
   return (
     <>

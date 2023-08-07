@@ -9,6 +9,7 @@ export default function Bar() {
   const loaderRef = useRef(null);
   const [loaderWidth, setLoaderWidth] = useState(0);
   const [LoadedState, setLoadedState]=useContext(Loaded)
+
   useEffect(() => {
     if (elementRef.current) {
       const observer = new ResizeObserver(entries => {
@@ -23,6 +24,8 @@ export default function Bar() {
       const width = loaderRef.current.offsetWidth;
       setLoaderWidth(width);
     }
+
+    
   }, []);
   useEffect(()=>{
     setTimeout(() => {

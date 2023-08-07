@@ -13,7 +13,7 @@ function App() {
 
   const element = useRoutes(routes);
   const [LoadedState, setLoadedState] = useState(0);
-  const [musicLoaded, setmusicLoaded] = useState(0);
+  const [musicLoaded, setmusicLoaded] = useState(1);
 
   //网络监测
   const [onlineStatus, setOnlinStatus] = useState(true);
@@ -50,7 +50,8 @@ function App() {
   }, [LoadedState])
   return (
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
-      <Background />
+      
+      {currentPath!=='/error'&&<Background />}
       <MusicLoad.Provider value={[musicLoaded, setmusicLoaded]}>
         <MusicPlayer />
         {element}

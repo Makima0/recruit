@@ -4,18 +4,8 @@ import "./index.less";
 // import { startAnimation } from "./Background";
 
 function Background() {
-  // useEffect(() => {
-  //   // const loadScript = async () => {
-  //   //   await startAnimation().start();
-  //   //   // 在这里可以调用script.js中的函数或变量
-  //   // };
 
-  //   // loadScript();
-  //   startAnimation()
-    
-  // }, []);
-
-  return <div className="Background">
+  return <div className="Background" >
     <div id="Jupiter"></div>
     <div id="Venus"></div>
     <div id="Star1"></div>
