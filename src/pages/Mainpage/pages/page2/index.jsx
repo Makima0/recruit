@@ -18,7 +18,7 @@ export default function Page2() {
 
   const [pageCount, setPageCount] = useState(c);//记录次数
 
-  const handleTouchStart2 = () => {  
+  const handleTouchStart = () => {  
    setIsTouchOver(false) 
    setIsTouch(true)
     // 长按时间阈值,超过2秒才有变化
@@ -33,7 +33,7 @@ export default function Page2() {
 
   useEffect(() => {
     if(isTouch){
-  setTimeout(() => { 
+  timer=setTimeout(() => { 
       if(!isTouchOver){
         setIsLongTouch(true)
       }
@@ -64,10 +64,7 @@ export default function Page2() {
       
 
       <div id='longTouchButton'
-        onTouchStart={() => {
-          handleTouchStart1();
-          handleTouchStart2();
-        }}
+        onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}>
       </div>
     </div>
