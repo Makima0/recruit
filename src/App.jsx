@@ -1,8 +1,6 @@
 import React, { useState, createContext, useEffect, useRef } from "react";
 import { useRoutes, useNavigate } from "react-router-dom";
 import routes from "./routes";
-import FirstLoading from "./pages/FirstLoading";
-import Error from "./pages/Error";
 import MusicPlayer from "./pages/Mainpage/pages/MusicPlayer";
 import Background from './common/Background/index'
 import "./App.less";
@@ -54,8 +52,8 @@ function App() {
     <Loaded.Provider value={[LoadedState, setLoadedState]}>
       <Background />
       <MusicLoad.Provider value={[musicLoaded, setmusicLoaded]}>
-      <MusicPlayer />
-      {element}
+        <MusicPlayer />
+        {element}
       </MusicLoad.Provider >
     </Loaded.Provider>
   );

@@ -6,7 +6,6 @@ import "./main.less";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-  <></>
       <App />
   </BrowserRouter>
 );

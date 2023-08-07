@@ -8,7 +8,7 @@ import End3 from './components/End3'
 import './index.less'
 
 export default function Ending() {
-  const [matchDgree, setmatchDgree] = useState(2)
+  const [matchDgree, setmatchDgree] = useState(3)
   useEffect(() => {
 
   }, [matchDgree])

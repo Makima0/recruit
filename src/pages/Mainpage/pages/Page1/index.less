@@ -5,9 +5,9 @@
   line-height: 5vh;
   text-indent: 2em;
   text-align: justify;
-  padding: 0 2vw;
   animation: text1Appear 4s;
-  font-size: 2vh;
+  font-size: 2vmax;
+  overflow: hidden;
 }
 
 
@@ -27,6 +27,10 @@
 #text1 {
   @text();
   top: 40%;
+  p{
+   padding: 0 2vw;
+   text-align: justify;
+  }
 }
 
 @keyframes text1Appear {

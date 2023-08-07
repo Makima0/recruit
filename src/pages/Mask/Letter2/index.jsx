@@ -12,13 +12,13 @@ export default function Letter2() {
   }
   function handleChoose1(team) {
     if (teamStatus) {
-      navigate('/end')
+      navigate(`/page2?team=${team}&c=1`)
     } else {
       alert('请选择你的战队')
     }
   }
   function handleClick1() {
-      setclickCount(!clickCount)
+    setclickCount(!clickCount)
   }
   return (
     <>
@@ -26,24 +26,26 @@ export default function Letter2() {
       </div>
       <div id='Letter2'>
         <div id='letterText'>
-          {clickCount==true?
+          {clickCount == true ?
             <>
               <div id='letterText1'>
                 <h1>紧急来信</h1>
                 <h4>尊敬的艾克塔尔星系战队总指挥官,</h4>
-                <p>请您立即赴约，选择一支战队加入到红岩星系中与之匹配度最高的战队，以便减少磨合期，发挥本星系战队的最大作用，完成联盟。</p>
+                <p> 你好！</p>
+                <p> 星际中的纷争愈演愈烈，如今我方地处联盟辖区的边缘地带，而其他星系正在迅速集结，面对如此规模的竞争对手们，目前我方星系只能坐以待毙，我们恳求您方战队立即赴约，与我方战队完成联盟。</p>
+                <span>红岩星系</span>
               </div>
-              <div id='teamChoose'>
-                <div><input type="radio" name="team" value="om" onChange={handleTeamChange} />战队1 （擅长稳定作战系统）</div>
-                <div><input type="radio" name="team" value="be" onChange={handleTeamChange} />战队2 （擅长构建可靠的作战系统）</div>
-                <div><input type="radio" name="team" value="fe" onChange={handleTeamChange} />战队3 （擅长锻造武器）</div>
-                <div><input type="radio" name="team" value="vd" onChange={handleTeamChange} />战队4 （擅长绘制精细的作战地图）</div>
-                <div><input type="radio" name="team" value="md" onChange={handleTeamChange} />战队5 （擅长迅速调整作战方法）</div>
-                <div><input type="radio" name="team" value="pp" onChange={handleTeamChange} />战队6 （擅长制定出其不意的战略）</div>
-              </div>
-            </>:
+
+            </> :
             <>
-            <div id='intro'>介绍</div>
+              <div id='teamChoose'>
+                <div><input type="radio" name="team" value="om" id='om' onChange={handleTeamChange} /><label htmlFor="om">战队一（运维）：擅长修复作战系统漏洞</label></div>
+                <div><input type="radio" name="team" value="be" id='be' onChange={handleTeamChange} /><label htmlFor='be'>战队二（后端）：擅长构建可靠的作战系统</label></div>
+                <div><input type="radio" name="team" value="fe" id='fe' onChange={handleTeamChange} /><label htmlFor='fe'> 战队三（前端）：擅长打造完美的系统操作界面</label></div>
+                <div><input type="radio" name="team" value="vd" id='vd' onChange={handleTeamChange} /><label htmlFor='vd'>战队四（视觉）：擅长绘制精细的作战地图</label></div>
+                <div><input type="radio" name="team" value="md" id='md' onChange={handleTeamChange} /><label htmlFor='md'>战队五（移动开发）：擅长构筑一切所需程序</label></div>
+                <div><input type="radio" name="team" value="pp" id='pp' onChange={handleTeamChange} /><label htmlFor='pp'>战队六（产品）：擅长制定出其不意的作战战略</label></div>
+              </div>
             </>
           }
 
@@ -51,7 +53,7 @@ export default function Letter2() {
         </div>
         <button onClick={(() => {
           handleChoose1(teamStatus)
-        })}>选好了，前往支援</button>
+        })}>选好了，前往联盟</button>
 
       </div></>
   )

@@ -28,12 +28,12 @@ export default function Page1() {
 
   return (<>
   {/* *************************测试时用，添加音乐加载判断功能时要改为musicLoaded == 0 ********************************/}
-    {musicLoaded == 1 ? <Loading /> :
+    {musicLoaded == 0 ? <Loading /> :
       <div id='page1'>
 
         {textCount == 1 &&
           <>
-            <p id='text1'>公元3202年，人类建立了一个由数百个星系组成的星际帝国。由于帝国的扩张和人口的剧烈增长，资源的稀缺性成为了一个严重的问题。</p>
+            <div id='text1'><p>公元3202年，人类建立了一个由数百个星系组成的星际帝国。由于帝国的扩张和人口的剧烈增长，资源的稀缺性成为了一个严重的问题。</p></div>
             <span id='next1' onClick={handleNext}>▽</span></>
         }
         {textCount == 2 &&

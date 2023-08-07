@@ -1,6 +1,6 @@
 #letterMask {
   position: absolute;
-  z-index: 100;
+  z-index: 50;
   top: 0;
   left: 0;
   width: 100vw;
@@ -72,100 +72,4 @@
     transform: rotate(0deg);
   }
 
-}
-
-#Letter2 {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: 100vh 100vw;
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-width: 350px;
-}
-
-#letterText {
-  width: 80vw;
-  height: 70vh;
-  background-color: rgb(255, 255, 255);
-  padding: 1.5vmax;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  animation: appearLetter 2s;
-  min-width: 320px;
-
-  #letterText1 {
-    color: black;
-    height: 30vh;
-    margin: 0;
-    display: flex;
-    justify-content: space-evenly;
-    ;
-    flex-direction: column;
-    animation: appearLetter 2s;
-
-
-    h1 {
-      margin: 0 0 0.5em 0;
-      font-size: 4vh;
-    }
-
-    h4 {
-      margin: 0;
-      text-align: left;
-      font-size: 2.4vmax;
-      font-weight: 600;
-
-    }
-
-    p {
-      text-align: justify;
-      font-size: 2vmax;
-      margin: 0;
-      line-height: 5vh;
-    }
-
-  }
-}
-
-#teamChoose {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  height: 40vh;
-  bottom: 5%;
-  animation: appearLetter 2s;
-
-  div {
-    margin: auto 0;
-    font-size: 2vmax;
-  }
-}
-
-/***按钮样式*****/
-button {
-  padding: 0 4vw;
-  font-size: 4vw;
-  margin-top: 3vh;
-  height: 3em;
-  border-radius: 2.5vh;
-  animation: appearLetter 2s;
-}
-
-@keyframes appearLetter {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }

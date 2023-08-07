@@ -10,12 +10,14 @@ import Letter2 from '../pages/Mask/Letter2'
 // 异步加载
 const Page1 = React.lazy(() => import('../pages/Mainpage/pages/Page1/index'));
 const Page2 = React.lazy(() => import('../pages/Mainpage/pages/Page2/index'));
+const Page3 = React.lazy(() => import('../pages/Mainpage/pages/Page3/index'));
 const Ending = React.lazy(() => import('../pages/Ending'));
+const Match = React.lazy(() => import('../pages/Match'));
 
 export default [
   {
-    path:'/firstload',
-    element:<FirstLoading/>
+    path: '/firstload',
+    element: <FirstLoading />
   },
   {
     path: '/error',
@@ -28,17 +30,27 @@ export default [
   {
     path: '/page1',
     element: <Suspense fallback={<Loading />}><Page1 /></Suspense>
+  },  
+  {
+    path: '/page2',
+    element: <Suspense fallback={<Loading />}><Page2 /></Suspense>
   },
-  {path:'/letter1',
-  element:<Letter1/>
+  {
+    path: '/page3',
+    element: <Suspense fallback={<Loading />}><Page3 /></Suspense>
   },
-  {path:'/letter2',
-  element:<Letter2/>
+  {
+    path: '/letter1',
+    element: <Letter1 />
+  },
+  {
+    path: '/letter2',
+    element: <Letter2 />
   }
   ,
   {
-    path: '/page2',
-    element: <Suspense fallback={<Loading />}><Page2 /></Suspense>,
+    path: '/match',
+    element: <Suspense fallback={<Loading />}><Match /></Suspense>,
   },
   {
     path: '/end',

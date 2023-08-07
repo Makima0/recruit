@@ -1,4 +1,4 @@
-#Letter{
+#Letter {
   position: absolute;
   z-index: 100;
   top: 0;
@@ -8,19 +8,118 @@
   background-size: 100vh 100vw;
   backdrop-filter: blur(10px);
 }
-#next{
+
+#next {
   margin-left: 90%;
   width: 4vh;
   height: 4vh;
   font-size: 4vh;
+  color: black;
 }
-#intro{
-  animation: appear1 3s;
-}
+
 @keyframes appear1 {
-  0%{
+  0% {
     opacity: 0;
-  }100%{
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#Letter2 {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100vh 100vw;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 350px;
+}
+
+#letterText {
+  width: 80vw;
+  height: 70vh;
+  background-color: rgb(255, 255, 255);
+  padding: 1.5vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: appearLetter 2s;
+  min-width: 320px;
+
+  #letterText1 {
+    color: black;
+    height: 30vh;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    animation: appearLetter 2s;
+
+    h1 {
+      margin: 0 0 0.5em 0;
+      font-size: 5vh;
+    }
+
+    h4 {
+      margin: 0;
+      text-align: left;
+      font-size: 2.4vmax;
+      font-weight: 600;
+
+    }
+
+    p {
+      text-align: justify;
+      font-size: 2vmax;
+      margin: 0;
+      line-height: 5vh;
+    }
+
+  }
+}
+
+#teamChoose {
+  font-size: 2vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  bottom: 5%;
+  color: black;
+
+  div {
+    margin: auto 0;
+    font-size: 2vmax;
+    text-align: left;
+    animation: appearLetter 2s;
+  }
+}
+
+/***按钮样式*****/
+button {
+  padding: 0 4vw;
+  font-size: 4vw;
+  margin-top: 3vh;
+  height: 3em;
+  border-radius: 2.5vh;
+  animation: appearLetter 2s;
+}
+
+@keyframes appearLetter {
+  from {
+    opacity: 0;
+  }
+
+  to {
     opacity: 1;
   }
 }
