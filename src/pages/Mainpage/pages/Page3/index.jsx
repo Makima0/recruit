@@ -17,7 +17,7 @@ export default function Page3() {
   }
   const navigate=useNavigate()
   const handleMatchTest = function () {
-navigate(`/match?tm=${team}&c=${parseInt(c)}`)
+navigate(`/match?team=${team}&c=${parseInt(c)}`)
   }
 
   useEffect(() => {
