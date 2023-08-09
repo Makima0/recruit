@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Match() {
   const matchList = {
-    teamName: ['运维', '后端', '前端', '视觉', '移动开发', '产品',],
+    teamName: ['前端', '后端','运维', '视觉', '移动开发', '产品',],
     'om': {
       matchdgree: [72, 76, 100, 65, 20, 23]
     }, 'be': {
@@ -62,7 +62,7 @@ export default function Match() {
         <p>当前为&nbsp;&nbsp;<p id='teamName'>{matchList.teamName[parseInt(c) - 1]}星球战队</p></p>
         <p>与我方战队匹配度为&nbsp;<p id='matchDgree'>{number}%</p></p></div>
       {c == '1' && <>
-        {matchList.om.matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
+        {matchList[team].matchdgree[parseInt(c) - 1]< 75 && <div id='match2'>匹配度较低</div>}
         <div id='match3'>
           <h5>战队介绍：</h5>
           <p>此战队是红岩星系精准交互响应的工程师</p>
@@ -77,7 +77,7 @@ export default function Match() {
       </>
       }
       {c == '2' && <>
-        {matchList.om.matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
+        {matchList[team].matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
         <div id='match3'>
           <h5>战队介绍：</h5>
           <p>此战队是红岩星系强大的数据架构师</p>
@@ -92,7 +92,7 @@ export default function Match() {
       </>
       }
       {c == '3' && <>
-        {matchList.om.matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
+        {matchList[team].matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
         <div id='match3'>
           <h5>战队介绍：</h5>
           <p>此战队是红岩星系的神秘白帽黑客</p>
@@ -107,7 +107,7 @@ export default function Match() {
       </>
       }
       {c == '4' && <>
-        {matchList.om.matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
+        {matchList[team].matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
         <div id='match3'>
           <h5>战队介绍：</h5>
           <p>此战队是红岩星系方寸间世界的缔造者</p>
@@ -122,7 +122,7 @@ export default function Match() {
       </>
       }
       {c == '5' && <>
-        {matchList.om.matchdgree[parseInt(c) - 1] < 75 && <div id='match2'>匹配度较低</div>}
+        {matchList[team].matchdgree[parseInt(c) - 1]< 75 && <div id='match2'>匹配度较低</div>}
         <div id='match3'>
           <h5>战队介绍：</h5>
           <p>此战队是红岩星系精准交互响应的工程师</p>
@@ -140,6 +140,7 @@ export default function Match() {
       </>
       }
       {c == '6' && <>
+      {matchList[team].matchdgree[parseInt(c) - 1]< 75 && <><div id='match2'>匹配度较低</div><div>当前为红岩星系最后一支战队</div></>}
         {<div id='match2'>当前为红岩星系最后一支战队</div>}
         <div id='match3'>
           <h5>战队介绍：</h5>

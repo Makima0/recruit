@@ -12,8 +12,8 @@ export default function Letter2() {
   }
   function handleChoose1(team) {
     if (teamStatus) {
-      // navigate(`/page2?team=${team}&c=1`)
-      navigate(`/match?team=${team}&c=1`)
+      navigate(`/page2?team=${team}&c=1`)
+      // navigate(`/match?team=${team}&c=1`)
     } else {
       alert('请选择你的战队')
     }

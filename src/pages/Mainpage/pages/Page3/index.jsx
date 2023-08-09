@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './index.less'
+import { useNavigate } from 'react-router-dom';
 
 export default function Page3() {
   //从url中获取team和c（次数）
@@ -13,6 +14,10 @@ export default function Page3() {
   const handleMaskNext = function () {
     setmatchShow(true)
     setMaskShow(false)
+  }
+  const navigate=useNavigate()
+  const handleMatchTest = function () {
+navigate(`/match?team=${team}&c=${parseInt(c)}`)
   }
 
   useEffect(() => {
@@ -35,7 +40,7 @@ export default function Page3() {
         </div>}
       {
         matchShow == true &&
-        <div id='matchButton'>
+        <div id='matchButton' onClick={handleMatchTest}>
           点击测试匹配度
         </div>
       }
