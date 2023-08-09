@@ -2,7 +2,8 @@
 body {
   margin: 0;
   height: 100vh;
-  min-width: 350px;
+  min-width: 350px; 
+  background-color: black;
 }
 
 #root {
@@ -42,8 +43,6 @@ body {
  /*判断当前屏幕方向*/
 //  横向
 @media screen and (orientation: landscape) {
-
- 
   #root,.Background {
     display: none;
   }
@@ -54,14 +53,11 @@ body {
 }
 // 竖向
 @media screen and (orientation:portrait) {
-
   #root,.Background {
     display: block;
   }
-
   #alert {
     display: none;
-   
   }
 }
 @keyframes floatAlert {

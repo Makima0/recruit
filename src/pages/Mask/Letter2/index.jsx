@@ -12,7 +12,8 @@ export default function Letter2() {
   }
   function handleChoose1(team) {
     if (teamStatus) {
-      navigate(`/page2?team=${team}&c=1`)
+      // navigate(`/page2?team=${team}&c=1`)
+      navigate(`/match?team=${team}&c=1`)
     } else {
       alert('请选择你的战队')
     }
@@ -39,12 +40,12 @@ export default function Letter2() {
             </> :
             <>
               <div id='teamChoose'>
-                <div><input type="radio" name="team" value="om" id='om' onChange={handleTeamChange} /><label htmlFor="om">战队一（运维）：擅长修复作战系统漏洞</label></div>
-                <div><input type="radio" name="team" value="be" id='be' onChange={handleTeamChange} /><label htmlFor='be'>战队二（后端）：擅长构建可靠的作战系统</label></div>
-                <div><input type="radio" name="team" value="fe" id='fe' onChange={handleTeamChange} /><label htmlFor='fe'> 战队三（前端）：擅长打造完美的系统操作界面</label></div>
-                <div><input type="radio" name="team" value="vd" id='vd' onChange={handleTeamChange} /><label htmlFor='vd'>战队四（视觉）：擅长绘制精细的作战地图</label></div>
-                <div><input type="radio" name="team" value="md" id='md' onChange={handleTeamChange} /><label htmlFor='md'>战队五（移动开发）：擅长构筑一切所需程序</label></div>
-                <div><input type="radio" name="team" value="pp" id='pp' onChange={handleTeamChange} /><label htmlFor='pp'>战队六（产品）：擅长制定出其不意的作战战略</label></div>
+                <div><input type="radio" name="team" value="om" id='om' onChange={handleTeamChange} /><label htmlFor="om">战队一：擅长修复作战系统漏洞</label></div>
+                <div><input type="radio" name="team" value="be" id='be' onChange={handleTeamChange} /><label htmlFor='be'>战队二：擅长构建可靠的作战系统</label></div>
+                <div><input type="radio" name="team" value="fe" id='fe' onChange={handleTeamChange} /><label htmlFor='fe'>战队三：擅长打造完美的系统操作界面</label></div>
+                <div><input type="radio" name="team" value="vd" id='vd' onChange={handleTeamChange} /><label htmlFor='vd'>战队四：擅长绘制精细的作战地图</label></div>
+                <div><input type="radio" name="team" value="md" id='md' onChange={handleTeamChange} /><label htmlFor='md'>战队五：擅长构筑一切所需程序</label></div>
+                <div><input type="radio" name="team" value="pp" id='pp' onChange={handleTeamChange} /><label htmlFor='pp'>战队六：擅长制定出其不意的作战战略</label></div>
               </div>
             </>
           }

@@ -31,15 +31,6 @@ export default function Page2() {
     console.log(isTouchOver);
   };
 
-  useEffect(() => {
-    if(isTouch){
-  timer=setTimeout(() => { 
-      if(!isTouchOver){
-        setIsLongTouch(true)
-      }
-    }, 2000)
-  }
-  }, [isTouch])
   
   useEffect(() => {
     if (isLongTouch&&isTouchOver) {
