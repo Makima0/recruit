@@ -7,5 +7,6 @@ import "./main.less";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
       <App />
+    <div id='alert'>请竖屏体验</div>
   </BrowserRouter>
 );

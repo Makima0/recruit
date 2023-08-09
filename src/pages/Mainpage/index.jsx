@@ -14,10 +14,11 @@ export default function Mainpage() {
 
 
   return (
-    <div id='mainpage'>
-      <p>星河守护</p>
-      <p>永无止境的挑战</p>
-      <div>欢迎来到星际帝国</div>
-    </div>
+    <div id="mainpage">
+      <div id="MaintitleBox"><div id='Maintitle1'></div>
+      <div id="Maintitle2"></div></div>
+          <div className="Centralstar"></div>
+      <div id="Maintitle3"></div>
+      </div>
   )
 }
